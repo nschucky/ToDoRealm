@@ -1,3 +1,3 @@
 # ToDoRealm
 
-![alt text](https://raw.githubusercontent.com/nschucky/ToDoRealm/tree/master/ToDoRealm/basic.gif)
+![alt text](https://raw.githubusercontent.com/nschucky/ToDoRealm/master/ToDoRealm/basic.gif)
