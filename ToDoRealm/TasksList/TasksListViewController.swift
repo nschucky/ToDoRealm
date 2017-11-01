@@ -16,10 +16,9 @@ class TasksListViewController: UIViewController {
     var searchController: UISearchController!
     
     fileprivate var tasks: Results<Task>!
-    
+    fileprivate var searchResults: Results<Task>!
     fileprivate var taskToken: NotificationToken?
     let realm = try! Realm()
-    fileprivate var searchResults: Results<Task>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +89,7 @@ class TasksListViewController: UIViewController {
     }
 }
 
+// MARK: - UITableViewDelegate, UITableViewDataSource
 extension TasksListViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -112,7 +112,6 @@ extension TasksListViewController: UITableViewDelegate, UITableViewDataSource {
             try! realm.write {
                 realm.delete(taskToBeDeleted)
             }
-            self.tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
@@ -137,8 +136,4 @@ extension TasksListViewController: UISearchResultsUpdating {
     
 }
 
-// MARK: - UISearchBarDelegate
-extension TasksListViewController:  UISearchBarDelegate {
-    
-}
 
